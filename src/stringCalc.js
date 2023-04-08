@@ -1,9 +1,8 @@
 const calc = (input) => {
     let delimiter = /\n|,/u
     if (input.startsWith('//'))
-        delimiter = input.match(/\/\/(.*)\n/u)[1];
+        [, delimiter] = input.match(/\/\/(.*)\n/u);
         input = input.replace(/\/\/(.*)\n/u, '');
-    console.log(delimiter);
     if (input === '') {
         return 0;
     }
