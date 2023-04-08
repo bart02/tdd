@@ -45,3 +45,12 @@ describe('5 handle custom delimiter like "//[delimiter]\n[numbers...]"', () => {
         expect(stringCalc('//p\n1p2p4')).toBe(7);
     });
 });
+
+describe('6 tests wave', () => {
+    it("negatives shall no pass", () => {
+        expect(() => stringCalc('2,-1')).toThrow('negatives not allowed')
+    });
+    it("negatives shall no pass", () => {
+        expect(() => stringCalc('2,1,0,-1')).toThrow('negatives not allowed')
+    });
+});
