@@ -8,6 +8,7 @@ const calc = (input) => {
     if (input === '') return 0;
     return input.split(delimiter).reduce((acc, curr) => {
         if (curr < 0) throw new Error('negatives not allowed');
+        if (curr > 1000) return acc;
         return acc + parseInt(curr, 10);
     }, 0);
 };
